@@ -3,6 +3,7 @@ package com.objectivemonsters.monsters;
 public class Monster {
     String name;
     // Health points
+    boolean isFriendly;
     int HP;
     // the type called Elemental and an enum
     Elemental elm;
@@ -27,6 +28,14 @@ public class Monster {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isFriendly() {
+        return isFriendly;
+    }
+
+    public void setFriendly(boolean friendly) {
+        isFriendly = friendly;
     }
 
     public int getHP() {
