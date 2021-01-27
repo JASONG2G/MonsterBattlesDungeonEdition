@@ -14,11 +14,10 @@ public class TextParser {
     // xml parser, pass in desired file to parse
 
     public void  monsterXML() {
-        String fileName = "/Users/candace/Documents/Capstone/MonsterBattlesDungeonEdition/com/objectivemonsters/monsters/monster.xml";
+        String fileName = "src/com/objectivemonsters/monsters/monster.xml";
         readXMLFiles(fileName);
     }
-
-
+    
     public void readXMLFiles(String textDoc){
 
         try {
