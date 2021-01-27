@@ -16,7 +16,6 @@ public class Monster {
     // add dimension to story with description of monster color, size, scariness all text-based
     String desc;
     // determine if a monster is friend or foe.
-    boolean isFriendly;
 
     // Constructors
 
@@ -96,14 +95,6 @@ public class Monster {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public boolean isFriendly() {
-        return isFriendly;
-    }
-
-    public void setFriendly(boolean friendly) {
-        isFriendly = friendly;
     }
 
     // tailored toString
