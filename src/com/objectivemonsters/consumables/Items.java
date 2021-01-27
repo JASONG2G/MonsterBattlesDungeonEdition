@@ -8,9 +8,16 @@ public class Items {
     // in advanced versions, too much weight will limit amount can carry
     int weight;
 
-    // TODO: no arg or detailed constructor?
+    // constructor
 
-   // Getters and Setters
+    public Items(String name, String type, int weight) {
+        this.name = name;
+        this.type = type;
+        this.weight = weight;
+    }
+
+
+    // Getters and Setters
 
     public String getName() {
         return name;
@@ -37,5 +44,14 @@ public class Items {
     }
 
 
-    // TODO: tailored toString
+    //tailored toString
+
+    @Override
+    public String toString() {
+        return "Items{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }
