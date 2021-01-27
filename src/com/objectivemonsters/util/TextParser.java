@@ -17,7 +17,7 @@ public class TextParser {
         String fileName = "src/com/objectivemonsters/monsters/monster.xml";
         readXMLFiles(fileName);
     }
-    
+
     public void readXMLFiles(String textDoc){
 
         try {
