@@ -1,6 +1,7 @@
 package com.objectivemonsters.util;
 
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -54,45 +55,41 @@ public class Prompter {
 
     /**
      * <p>
-     * Prompts for input, validates it against the regex pattern provided, and returns
-     * the line of text entered, as a string.  If the input does not match the pattern,
-     * the error message text is displayed, and then the prompt text is displayed again.
-     * The input is validated against the regex pattern via {@code String.matches()}.
+     * Prompts for input, validates it against the list of acceptable words provided, and returns
+     * the line of text entered, as a string.  If the first input does not match a word in provided list,
+     * or the provided input is not two words, the error message text is displayed, and then the prompt text is displayed again.
      * </p>
-     *
-     * <p>
-     * The prompt text and error message text are output verbatim, exactly as provided.
-     * To add a blank line or two between the user input line, the error message line,
-     * and the follow-on user prompt, just include {@code "\n"} in the {@code retryText} value,
-     * as appropriate.  For example:
-     * </p>
-     *
      * <pre>
      * <code>
-     *     prompter.prompt("Please enter your age: ", "\\d+", "\nThat is not a valid age!\n");
+     *     prompter.prompt("What would you like to do?", ["GO", "OPEN", "Look"], "I'm sorry I don't understand those commands");
      * </code>
      * </pre>
      *
-     * @param promptText prompt message.
-     * @param pattern regex pattern, used to validate the input string.
-     * @param retryText error message displayed when input string does not match regex pattern.
+     * @param promptMessage prompt message.
+     * @param acceptableVerbs List of verbs the game allows for use
+     * @param retryMessage error message displayed when input string does not match regex pattern.
      * @return the line of text that was input, as a string.
      */
-    public String prompt(String promptText, String pattern, String retryText) {
+    public String prompt(String promptMessage, List<String> acceptableVerbs, String retryMessage) {
         String response = null;
-        boolean validResponse = false;
+        boolean isValidRes = false;
 
-        while (!validResponse) {
-            System.out.print(promptText);
-            response = scanner.nextLine();
-            validResponse = response.matches(pattern);
-            if (!validResponse) {
-                System.out.println(retryText);
+        while (!isValidRes) {
+            System.out.println(promptMessage);
+            response = scanner.nextLine().toLowerCase();
+            String[] resArray = response.split(" ");
+            //check if 2 words and verb matches acceptableVerbs
+            for (String verb : acceptableVerbs) {
+                if (resArray[0].equals(verb.toLowerCase()) && resArray.length == 2) {
+                    isValidRes = true;
+                    break;
+                }
             }
-            else {
-                break;
+            if (!isValidRes) {
+                System.out.println(retryMessage);
             }
         }
+
         return response;
     }
 }
