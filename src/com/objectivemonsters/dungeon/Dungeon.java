@@ -19,8 +19,16 @@ public class Dungeon {
     // Dungeon level for advanced dungeons
     int level;
 
+    //constructors
 
-    // TODO: no-arg or tailored constructors
+    public Dungeon(List<Room> dungeonRooms, List<Monster> dungeonMonsters, List<Items> dungeonItems, Boolean escape, int level) {
+        this.dungeonRooms = dungeonRooms;
+        this.dungeonMonsters = dungeonMonsters;
+        this.dungeonItems = dungeonItems;
+        this.escape = escape;
+        this.level = level;
+    }
+
 
     // Getters and  Setters
 
@@ -65,6 +73,16 @@ public class Dungeon {
     }
 
 
-    // TODO: tailored toString
+    // tailored toString
 
+    @Override
+    public String toString() {
+        return "Dungeon{" +
+                "dungeonRooms=" + dungeonRooms +
+                ", dungeonMonsters=" + dungeonMonsters +
+                ", dungeonItems=" + dungeonItems +
+                ", escape=" + escape +
+                ", level=" + level +
+                '}';
+    }
 }

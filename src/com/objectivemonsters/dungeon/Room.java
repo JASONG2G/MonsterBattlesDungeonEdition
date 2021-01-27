@@ -19,7 +19,17 @@ public class Room {
     // items in room
     List<Items> item;
 
-    // TODO: Constructor
+    // Constructor
+
+    public Room(int roomId, String name, String description, List<String> archways, Monster roomMonster, List<Items> item) {
+        this.roomId = roomId;
+        this.name = name;
+        this.description = description;
+        this.archways = archways;
+        this.roomMonster = roomMonster;
+        this.item = item;
+    }
+
 
     // Getters and Setters
 
@@ -71,5 +81,17 @@ public class Room {
         this.item = item;
     }
 
-    // TODO: Tailored toString
+    // Tailored toString
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomId=" + roomId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", archways=" + archways +
+                ", roomMonster=" + roomMonster +
+                ", item=" + item +
+                '}';
+    }
 }
