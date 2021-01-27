@@ -14,9 +14,21 @@ public class Monster {
     int agility;
     // add dimension to story with description of monster color, size, scariness all text-based
     String desc;
+    // determine if a monster is friend or foe.
+    boolean isFriendly;
 
     // Constructors
-    // TODO: no-arg or tailored constructor
+
+    public Monster(String name, int HP, Elemental elm, int strength, int intellect, int agility, String desc, boolean isFriendly) {
+        this.name = name;
+        this.HP = HP;
+        this.elm = elm;
+        this.strength = strength;
+        this.intellect = intellect;
+        this.agility = agility;
+        this.desc = desc;
+        this.isFriendly = isFriendly;
+    }
 
 
     // Getters and Setters
@@ -77,8 +89,28 @@ public class Monster {
         this.desc = desc;
     }
 
+    public boolean isFriendly() {
+        return isFriendly;
+    }
 
-    // TODO: tailored toString
+    public void setFriendly(boolean friendly) {
+        isFriendly = friendly;
+    }
+
+    // tailored toString
 
 
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "name='" + name + '\'' +
+                ", HP=" + HP +
+                ", elm=" + elm +
+                ", strength=" + strength +
+                ", intellect=" + intellect +
+                ", agility=" + agility +
+                ", desc='" + desc + '\'' +
+                ", isFriendly=" + isFriendly +
+                '}';
+    }
 }
