@@ -14,7 +14,7 @@ public class TextParser {
     // xml parser, pass in desired file to parse
 
     public void  monsterXML() {
-        String fileName = "src/com/objectivemonsters/monsters/monster.xml";
+        String fileName = "src/resources/monster.xml";
         readXMLFiles(fileName);
     }
     
