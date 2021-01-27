@@ -78,7 +78,6 @@ public class Prompter {
             System.out.println(promptMessage);
             response = scanner.nextLine().toLowerCase();
             String[] resArray = response.split(" ");
-            //check if 2 words and verb matches acceptableVerbs
             for (String verb : acceptableVerbs) {
                 if (resArray[0].equals(verb.toLowerCase()) && resArray.length == 2) {
                     isValidRes = true;
