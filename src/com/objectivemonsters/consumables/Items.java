@@ -3,7 +3,7 @@ package com.objectivemonsters.consumables;
 // consumable items the player may collect and carry and use
 public class Items {
     String name;
-    // TODO: comment here
+    // TODO: comment here ?
     String type;
     // in advanced versions, too much weight will limit amount can carry
     int weight;
